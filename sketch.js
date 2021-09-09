@@ -24,7 +24,6 @@ var shootTimer = 0;
 var scoreCounter;
 var scoreCounterState = "normal";
 var formState = "no";
-var slider;
 
 
 function preload() {
@@ -121,7 +120,7 @@ function setup() {
     scoreCounter.addAnimation('1', scoreCounter1);
     scoreCounter.addAnimation('2', scoreCounter2);
     scoreCounter.addAnimation('3', scoreCounter3);
-    slider = createSlider(0, 1, 0.7, 0.0001);
+    
 }
 
 
@@ -131,11 +130,8 @@ function draw() {
     if (gameState === "notStarted") {
         textSize(30);
         fill('yellow');
-        text("Volume", 115, 280);
-        slider.visible = true;
-        slider.position(100, 300); 
+        text("Volume", 115, 280)
     } else {
-        slider.position(1000000, 2000000);
     }
     if (mousePressedOver(startButton)) {
         gameState = "started";
@@ -196,16 +192,12 @@ function draw() {
         startButton.x = 10000;
         helpButton.x = 10000;
         logo.x = 10000;
-        slider.visible = false;
-        slider.x = 1000
     } else {
         startButton.x = width / 2;
         startButton.y = height / 3 + height / 2 - 80;
         helpButton.x = width / 2;
         helpButton.y = height / 2 + height / 3 + 20
-        logo.position = { x: width / 2, y: height / 2 - 100 }
-        slider.visible = true;
-        slider.x = 100;
+        logo.position = { x: width / 2, y: height / 2 - 100 };
     }
     console.log(sHealth, gameState);
     backMusic.setVolume(musicVolume);
