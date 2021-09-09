@@ -127,6 +127,7 @@ function setup() {
 
 function draw() {
     background(wall);
+    lobby_sound.setVolume(slider.value());
     if (gameState === "notStarted") {
 
         textSize(30);
@@ -172,7 +173,6 @@ function draw() {
     if (gameState === "notStarted") {
         if (lobby_sound.isPlaying() == false) {
             lobby_sound.play();
-
         }
         reloadPrompt.visible = true;
         reloadPrompt.scale = 0.5;
@@ -197,15 +197,18 @@ function draw() {
         startButton.x = 10000;
         helpButton.x = 10000;
         logo.x = 10000;
+        slider.visible = false;
+        slider.x = 1000
     } else {
         startButton.x = width / 2;
         startButton.y = height / 3 + height / 2 - 80;
         helpButton.x = width / 2;
         helpButton.y = height / 2 + height / 3 + 20
         logo.position = { x: width / 2, y: height / 2 - 100 }
+        slider.visible = true;
+        slider.x = 100;
     }
     console.log(sHealth, gameState);
-
     backMusic.setVolume(musicVolume);
     if (gameState == "started") {
         lobby_sound.pause();
@@ -298,7 +301,7 @@ function draw() {
         // if (score === 25) {
         //     scoreCounterState = "notNormal";
         // }
-        text(bulletState + ' ' + sHealth, 0, 400);
+//         text(bulletState + ' ' + sHealth, 0, 400);
         textSize(35);
         fill("lightgreen");
         textStyle(BOLD)
