@@ -129,14 +129,13 @@ function draw() {
     background(wall);
     lobby_sound.setVolume(slider.value());
     if (gameState === "notStarted") {
-
         textSize(30);
         fill('yellow');
         text("Volume", 115, 280);
         slider.visible = true;
-        slider.position(100, 300); // = { x: 100, y: 300 };
+        slider.position(100, 300); 
     } else {
-        slider.visible = false;
+        slider.position(1000000, 2000000);
     }
     if (mousePressedOver(startButton)) {
         gameState = "started";
