@@ -126,7 +126,6 @@ function setup() {
 
 function draw() {
     background(wall);
-    lobby_sound.setVolume(slider.value());
     if (gameState === "notStarted") {
         textSize(30);
         fill('yellow');
