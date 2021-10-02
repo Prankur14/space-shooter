@@ -68,14 +68,14 @@ function preload() {
     scoreCounter1 = loadAnimation('score/1.png');
     scoreCounter2 = loadAnimation('score/2.png');
     scoreCounter3 = loadAnimation('score/3.png');
-    fullscreen(true);
+//     fullscreen(true);
 }
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
     createsprite = createSprite;
     shealth = sHealth;
-    fullscreen(true);
+//     fullscreen(true);
     bg = createSprite(width / 2, -650 + height);
     bg.addAnimation('bg', bgImage);
     bg.visible = false;
